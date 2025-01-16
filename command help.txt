@@ -1,0 +1,23 @@
+#Open Terminal
+Ctrl + Shift + ø
+
+#open new repo
+ctrl + shift + N
+
+#Node Commands
+npm init --y
+npm install express
+
+node app
+
+#Git push
+git add .
+git commit -m "initial commit"
+git push origin main
+
+
+#annet (ikke bruk)
+git remote add origin https://github.com/Credypt/tankesvm.git
+#Git start
+git init
+git clone https://github.com/Credypt/tankesvm.git

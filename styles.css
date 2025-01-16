@@ -1,0 +1,26 @@
+:root {
+    --white: #f4f4f4;
+  } 
+
+* {
+    font-family: serif;
+    /*Remove scrollbars*/
+    overflow-x: hidden;
+    scrollbar-width: none;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 2rem;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
