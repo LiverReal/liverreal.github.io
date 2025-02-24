@@ -47,3 +47,12 @@ p {
     font-size: 1.5rem;
     margin: 1rem;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-element {
+    display: inline-block;
+}
