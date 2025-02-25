@@ -49,14 +49,47 @@ p {
     background-image: url("assets/images/wordbg.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-size: 100% 100%;
+    background-color: rgb(240, 240, 240);
 }
 
-#chatarea{
-    border: 1px solid black;
+#chatcontainer {
+    background-color: rgba(240, 240, 240, 0.071);
     position: fixed;
-    top: 20vh;
-    left:24.5vw;
-    width: 50vw;
-    height: 60vh;
+    width: 100vw;
+    height: 72%;
+    top: 21%;
+}
+
+#chatarea {
+    background-color: white;
+    border: 1px solid rgb(227, 227, 227);
+    position: fixed;
+    transform: translate(-50%, 0);
+    left: 49.5%;
+    width: 90vw;
+    height: 71%;
+    overflow-y: scroll;
+    
+}
+
+label {
+    font-size: 1rem;
+}
+
+input {
+    font-size: 1rem;
+}
+
+button {
+    font-size: 1rem;
+}
+
+a#logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url(assets/images/word.png);
 }
