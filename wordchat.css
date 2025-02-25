@@ -26,7 +26,7 @@
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 1rem;
     text-align: center;
 }
@@ -39,10 +39,24 @@ h2 {
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 1rem;
 }
 
 .bg {
-    
+    width: 100vw;
+    height: 100vh;
+    background-image: url("assets/images/wordbg.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+#chatarea{
+    border: 1px solid black;
+    position: fixed;
+    top: 20vh;
+    left:24.5vw;
+    width: 50vw;
+    height: 60vh;
 }
