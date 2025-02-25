@@ -1,9 +1,18 @@
 :root {
     --white: #f4f4f4;
+    --black: #181818;
+    --secondary: #da2525;
+    --secondark: #b90b0b;
+    --thirdary: #ffb916;
+    --thirdark: #c08d00;
 } 
 
 * {
-    font-family: sans-serif;
+    font-family: "Rubik", serif;    
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
     /*Remove scrollbars*/
     overflow-x: hidden;
     scrollbar-width: none;
@@ -25,10 +34,17 @@
     display: none;
 }
 
+.content {
+    margin: auto;
+    max-width: 1000px;
+}
 h1 {
     font-size: 3rem;
     margin: 1rem;
     text-align: center;
+      font-family: "Arsenal SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h2 {
@@ -49,8 +65,17 @@ p.notice {
 }
 
 a {
+    color: var(--white);
+    text-align: center;
     font-size: 1.5rem;
     text-decoration: none;
+    transition: background-color 200ms;
+    background-color: var(--secondary);
+    border-radius: 10px;
+}
+
+a:hover {
+    background-color: var(--secondark);
 }
 
 label {
@@ -59,19 +84,40 @@ label {
 
 input {
     font-size: 1rem;
+      font-family: "Lilita One", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 button {
     font-size: 1rem;
 }
 
-a#logo {
+table {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    border: 1px solid;
+}
+
+th {
+    background-color: var(--thirdary);
+}
+
+th, td {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+#logo {
     position: fixed;
     top: 0;
     left: 0;
-    width: 48px;
-    height: 48px;
-    background-image: url(assets/images/word.png);
+    width: 100px;
+    height: 100px;
+    background-image: url(assets/images/logo.jpg);
+    background-size: contain;
 }
 
 img {
@@ -95,9 +141,10 @@ img {
 }
 
 .grid-item {
+    color: var(--black);
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 1rem;
     text-align: center;
     transition: all 100ms ease-out;
   }
@@ -153,5 +200,27 @@ img {
     width: 90vw;
     height: 71%;
     overflow-y: scroll;
-    
+}
+
+.simple-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 0.5rem;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+@media all and (display-mode: fullscreen) {
+  #logo, .notice {
+      display: none;
+  }
 }
