@@ -20,7 +20,7 @@
     margin: 0;
     padding: 0;
 
-    font-size: 2rem;
+    font-size: 1rem;
     
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -34,6 +34,36 @@ html {
     font-size: clamp(12px, 6vw, 30px);
 }
 
+body {
+    color: var(--black);
+}
+
+.white {
+    color: var(--white);
+}
+
+.branded-bg {
+    z-index: -2;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(assets/images/branding/logo.jpg);
+    background-position: center top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.branded-bg-overlay {
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--white) 80%);
+    background-position: center top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
 *::-webkit-scrollbar {
     display: none;
 }
@@ -43,16 +73,16 @@ html {
     max-width: 1000px;
 }
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 1rem;
     text-align: center;
       font-family: "Arsenal SC", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin: 1rem;
     font-weight: 200;
     text-align: center;
@@ -70,6 +100,11 @@ p.notice {
 
 a {
     color: var(--white);
+    text-decoration: none;
+}
+
+.button {
+    color: var(--white);
     text-align: center;
     font-size: 1.5rem;
     text-decoration: none;
@@ -78,7 +113,7 @@ a {
     border-radius: 10px;
 }
 
-a:hover {
+.button:hover {
     background-color: var(--secondark);
 }
 
@@ -114,13 +149,23 @@ th, td {
     padding: 0.5rem;
 }
 
+li {
+    margin: 0 0 0 1rem;
+    padding: 0.5rem 0rem 0.5rem 60px;
+	list-style: none;
+	background-image: url("assets/images/branding/liverreal-monoicon.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 1.5rem;
+}
+
 #logo {
     position: fixed;
     top: 0;
     left: 0;
     width: 100px;
     height: 100px;
-    background-image: url(assets/images/logo.jpg);
+    background-image: url(assets/images/branding/liverreal-icon.png);
     background-size: contain;
 }
 
@@ -210,13 +255,14 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
+    margin: 1rem;
 }
 
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50px;
+    height: 2rem;
     font-size: 0.5rem;
     text-align: center;
     background-color: var(--black);
@@ -227,4 +273,33 @@ footer {
   #logo, .notice {
       display: none;
   }
+}
+
+
+/*ranks*/
+:root {
+    --common: #15d100;
+    --rare: #d80000;
+    --unreal: #00cad8;
+    --inmagen: #fff200;
+}
+
+.common {
+    background-color: var(--common);
+    color: var(--white);
+}
+
+.rare {
+    background-color: var(--rare);
+    color: var(--white);
+}
+
+.unreal {
+    background-color: var(--unreal);
+    color: var(--white);
+}
+
+.inmagen {
+    background-color: var(--inmagen);
+    color: var(--white);
 }
