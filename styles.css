@@ -30,6 +30,10 @@
     user-select: none;
 }
 
+html {
+    font-size: clamp(12px, 6vw, 30px);
+}
+
 *::-webkit-scrollbar {
     display: none;
 }
