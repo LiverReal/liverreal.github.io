@@ -1,14 +1,15 @@
 :root {
     --white: #f4f4f4;
+    --off-white: #ccd9d8;
     --black: #181818;
-    --half-invis: #00000084;
+    --half-invis: #00000054;
     --invis: #00000000;
-    --secondarl: #e85c4d;
-    --secondary: #da2525;
-    --secondark: #b90b0b;
-    --thirdarl: #eac83e;
+    --secondarl: #f24a44;
+    --secondary: #e82929;
+    --secondark: #db1515;
+    --thirdarl: #efb446;
     --thirdary: #ffb916;
-    --thirdark: #c08d00;
+    --thirdark: #d1830e;
 } 
 
 * {
@@ -35,7 +36,7 @@
 }
 
 html {
-    font-size: clamp(12px, 6vw, 30px);
+    font-size: clamp(12px, 4vw, 30px);
 }
 
 body {
@@ -57,12 +58,23 @@ body {
     background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+.alt-branded-bg {
+    z-index: -2;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(assets/images/branding/liverreal-bg.png);
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
 .branded-bg-overlay {
     z-index: -1;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), var(--white) 80%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), linear-gradient(var(--thirdark), var(--invis) 50%);
     background-position: center top; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
@@ -109,39 +121,8 @@ a {
 
 a.hyperlink {
     font-size: 0.5rem;
-    color: lightblue;
-    float: left;
+    color: rgb(59, 133, 237);
     padding: 0 0 0 1rem;
-}
-
-/*
-.cool-button {
-    color: var(--white);
-    text-align: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: background-color 200ms;
-}
-  background-image: linear-gradient(var(--secondary), var(--secondark));
-    border: 3px solid;
-    border-image-slice: 10;
-    border-image-source: linear-gradient(to top, var(--thirdary), var(--thirdark));
-    border-radius: 10px;
-    box-shadow: 0 0 0 10px red, 0 0 0 15px blue;  Additional "borders" */
-
-.cool-button {
-    position: relative;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1;
-    background-image: linear-gradient(to top, var(--secondark), var(--secondary));
-    transition: background-image 500ms ease-out;
-    background-size: 200% 200%;
-    animation: colorAnimation 1s infinite ease-in-out;
-}
-
-.cool-button:hover {
-    background: linear-gradient(to top, var(--secondary), var(--secondarl));
 }
 
 @keyframes colorAnimation {
@@ -151,18 +132,19 @@ a.hyperlink {
 }
 
 .button-test {
-    width: 10vw;
-    margin: 2rem;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    text-shadow: 2px 2px 0px var(--thirdark);
-    background-image: linear-gradient(var(--invis), var(--secondary));
-    background-color: var(--secondark);
-    transition: background-color 200ms ease-out;
+    margin: 0.5rem;
+    padding: 1rem 1rem;
+    text-shadow: 1.5px 1.5px 0px var(--thirdark), 0px 1.5px 0px var(--thirdark), -1.5px 1.5px 0px var(--thirdark);
+    background-image: linear-gradient(var(--invis), var(--secondark));
+    background-color: var(--secondary);
+    transition: background-color 200ms;
     text-align: center;
-    border: 5px solid var(--thirdark);
-    box-shadow: 0px 0px 2px 1px var(--secondark);
-    filter: drop-shadow(0px 5px 0px var(--half-invis));
+    border: 5px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to bottom, var(--thirdary), var(--thirdark));
+    border-radius: 10px;
+
+    filter: drop-shadow(5px 5px 0px var(--half-invis));
 }
 
 .button-test:hover {
@@ -212,11 +194,12 @@ li {
 }
 
 #logo {
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100px;
-    height: 100px;
+    width: 4rem;
+    height: 4rem;
     background-image: url(assets/images/branding/liverreal-icon.png);
     background-size: contain;
 }
@@ -231,52 +214,8 @@ img {
 }
 
 .hero-image {
-    width: 80%;
-    border-radius: 2px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 400px 400px;
-    background-color: #c8c8c8;
-    padding: 30px;
-    margin: 20px;
-    gap: 30px;
-    border-radius: 15px;
-}
-
-.grid-item {
-    color: var(--black);
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    font-size: 1rem;
-    text-align: center;
-    transition: all 100ms ease-out;
-  }
-.grid-item:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transform: scale(1.1, 1.1);
-  }
-.grid-img {
     width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-.grid-text {
-    position: relative;
-    font-size: 3rem;
-    margin-top: 10px;
-    padding: 0;
-    bottom: 40px;
-}
-.grid-info {
-    text-align: left;
-    font-size: 1rem;
-    color: gray;
-    margin-left: 5px;
-    padding: 0;
+    border-radius: 2px;
 }
 
 .bg {
@@ -311,8 +250,6 @@ img {
 .simple-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin: 1rem;
 }
 
 footer {
@@ -330,6 +267,11 @@ footer {
   #logo, .notice {
       display: none;
   }
+}
+@media screen and (max-width: 750px) {
+.simple-grid {
+    grid-template-columns: 1fr;
+}
 }
 
 

@@ -1,9 +1,9 @@
 {
-  "name": "title",
-  "short_name": "title",
+  "name": "LiverReal",
+  "short_name": "LiverReal",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#d1830e",
+  "theme_color": "#db1515",
   "orientation": "portrait-primary"
 }
