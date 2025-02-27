@@ -1,8 +1,12 @@
 :root {
     --white: #f4f4f4;
     --black: #181818;
+    --half-invis: #00000084;
+    --invis: #00000000;
+    --secondarl: #e85c4d;
     --secondary: #da2525;
     --secondark: #b90b0b;
+    --thirdarl: #eac83e;
     --thirdary: #ffb916;
     --thirdark: #c08d00;
 } 
@@ -110,18 +114,59 @@ a.hyperlink {
     padding: 0 0 0 1rem;
 }
 
-.button {
+/*
+.cool-button {
     color: var(--white);
     text-align: center;
     font-size: 1.5rem;
     text-decoration: none;
     transition: background-color 200ms;
-    background-color: var(--secondary);
+}
+  background-image: linear-gradient(var(--secondary), var(--secondark));
+    border: 3px solid;
+    border-image-slice: 10;
+    border-image-source: linear-gradient(to top, var(--thirdary), var(--thirdark));
     border-radius: 10px;
+    box-shadow: 0 0 0 10px red, 0 0 0 15px blue;  Additional "borders" */
+
+.cool-button {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1;
+    background-image: linear-gradient(to top, var(--secondark), var(--secondary));
+    transition: background-image 500ms ease-out;
+    background-size: 200% 200%;
+    animation: colorAnimation 1s infinite ease-in-out;
 }
 
-.button:hover {
+.cool-button:hover {
+    background: linear-gradient(to top, var(--secondary), var(--secondarl));
+}
+
+@keyframes colorAnimation {
+    0% { background-position: 0% 30%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 0% 30%; }
+}
+
+.button-test {
+    width: 10vw;
+    margin: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-shadow: 2px 2px 0px var(--thirdark);
+    background-image: linear-gradient(var(--invis), var(--secondary));
     background-color: var(--secondark);
+    transition: background-color 200ms ease-out;
+    text-align: center;
+    border: 5px solid var(--thirdark);
+    box-shadow: 0px 0px 2px 1px var(--secondark);
+    filter: drop-shadow(0px 5px 0px var(--half-invis));
+}
+
+.button-test:hover {
+    background-color: var(--secondarl);
 }
 
 label {
