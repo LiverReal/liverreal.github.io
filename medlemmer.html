@@ -23,20 +23,22 @@
 <div class="branded-bg-overlay"></div>
 
 <main class="content white">
-<h1>LiverReal United FC</h1>
-<p> Medlemmer:</p>
+<h1>Fotball lag</h1>
+<div class="simple-grid">
+<div>
+<h2>LiverReal United FC:</h2>
 <table>
-<tr class="thirdary">
+<tr>
 <th>Navn</th>
 <th>Rank</th>
 </tr>
 <tr>
 <td>Even</td>
-<td>Leder</td>
+<td class="common">Leder</td>
 </tr>
 <tr>
 <td>Nemanja</td>
-<td>Kaptein</td>
+<td class="unreal">Kaptein</td>
 </tr>
 <tr>
 <td>Oskar</td>
@@ -44,7 +46,7 @@
 </tr>
 <tr>
 <td>August</td>
-<td>Veteran</td>
+<td class="rare">Veteran</td>
 </tr>
 <tr>
 <td>Jan Erik</td>
@@ -52,25 +54,44 @@
 </tr>
 <tr>
 <td>Amadeo</td>
-<td>Spiss</td>
+<td class="inmagen">Spiss</td>
 </tr>
 <tr>
 <td>Kevin</td>
-<td>Kaptein</td>
+<td class="unreal">Kaptein</td>
 </tr>
 <tr>
 <td>Haug</td>
-<td>Kaptein</td>
+<td class="unreal">Kaptein</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>CurryFC (fiende):</h2>
+<table>
+<tr>
+<th>Navn</th>
+<th>Rank</th>
 </tr>
 <tr>
-    <td>Willy</td>
-    <td>CurryFC fan </td>
-    </tr>
+<td>ingen</td>
+<td class="garbage">CurryFC fan </td>
+</tr>
 </table>
+</div>
+</div>
+
 <p>Send inn navnet ditt om du er med</p>
 <form action="https://formsubmit.co/sugooglcks@gmail.com" method="POST">
+    <input name="Medlemmer" id="quote" type="text" placeholder="Skriv her">
     <label for="quote">Navn</label>
-    <input name="Medlemmer" id="quote" type="text">
+    <br>
+    <input type="radio" id="curry" name="club" required>
+    <label for="curry">CurryFC</label>
+    <br>
+    <input type="radio" id="liverreal" name="club" required>
+    <label for="liverreal">LiverReal United FC</label>
+    <br>
     <button type="submit">Bli medlem</button>
 </form>
 </main>

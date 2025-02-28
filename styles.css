@@ -3,6 +3,7 @@
     --off-white: #ccd9d8;
     --black: #181818;
     --half-invis: #00000054;
+    --half-invis-light: #43434354;
     --invis: #00000000;
     --secondarl: #f24a44;
     --secondary: #e82929;
@@ -36,7 +37,7 @@
 }
 
 html {
-    font-size: clamp(12px, 4vw, 30px);
+    font-size: clamp(14px, 4vw, 30px);
 }
 
 body {
@@ -98,7 +99,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin: 1rem;
     font-weight: 200;
     text-align: center;
@@ -177,12 +178,16 @@ table {
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
-    border: 1px solid var(--white);
+    border-radius: 25px;
+    background-color: var(--half-invis-light);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: 0px solid var(--white);
 }
 
 th, td {
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
 }
 
 li {
@@ -258,7 +263,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 2rem;
+    height: 2.5rem;
     font-size: 0.5rem;
     text-align: center;
     background-color: var(--black);
@@ -279,41 +284,51 @@ footer {
 
 /*ranks*/
 :root {
+    --garbage: #956c40;
     --common: #15d100;
     --rare: #d80000;
     --unreal: #00cad8;
     --inmagen: #ffd500;
 }
 
+.garbage {
+    color: var(--garbage);
+    text-shadow: 0 0 5px var(--garbage);
+    -webkit-text-stroke: 1px var(--white);
+}
+
 .common {
-    background-color: var(--common);
-    color: var(--white);
+    color: var(--common);
+    text-shadow: 0 0 5px var(--common);
+    -webkit-text-stroke: 1px var(--white);
 }
 
 .rare {
-    background-color: var(--rare);
-    color: var(--white);
+    color: var(--rare);
+    text-shadow: 0 0 5px var(--rare);
+    -webkit-text-stroke: 1px var(--white);
 }
 
 .unreal {
-    background-color: var(--unreal);
-    color: var(--white);
+    color: var(--unreal);
+    text-shadow: 0 0 5px var(--unreal);
+    -webkit-text-stroke: 1px var(--white);
 }
 
 .inmagen {
-    background-color: var(--inmagen);
-    color: var(--white);
-    text-shadow: 1px 0px 3px var(--black);
+    color: var(--inmagen);
+    text-shadow: 0 0 5px var(--inmagen), 1px 0px 3px var(--black);
+    -webkit-text-stroke: 1px var(--white);
 }
 
 .secondary {
-    background-color: var(--secondary);
-    color: var(--white);
-    text-shadow: 1px 0px 3px var(--black);
+    color: var(--secondary);
+    text-shadow: 0 0 5px var(--secondary);
+    -webkit-text-stroke: 1px var(--white);
 }
 
 .thirdary {
-    background-color: var(--thirdary);
-    color: var(--white);
-    text-shadow: 1px 0px 3px var(--black);
+    color: var(--thirdary);
+    text-shadow: 0 0 5px var(--thirdary);
+    -webkit-text-stroke: 1px var(--white);
 }
