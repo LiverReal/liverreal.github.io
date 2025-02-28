@@ -171,11 +171,7 @@ table {
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
-    border: 1px solid;
-}
-
-th {
-    background-color: var(--thirdary);
+    border: 1px solid var(--white);
 }
 
 th, td {
@@ -280,7 +276,7 @@ footer {
     --common: #15d100;
     --rare: #d80000;
     --unreal: #00cad8;
-    --inmagen: #fff200;
+    --inmagen: #ffd500;
 }
 
 .common {
@@ -301,4 +297,17 @@ footer {
 .inmagen {
     background-color: var(--inmagen);
     color: var(--white);
+    text-shadow: 1px 0px 3px var(--black);
+}
+
+.secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+    text-shadow: 1px 0px 3px var(--black);
+}
+
+.thirdary {
+    background-color: var(--thirdary);
+    color: var(--white);
+    text-shadow: 1px 0px 3px var(--black);
 }
