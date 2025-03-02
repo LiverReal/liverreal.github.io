@@ -1,4 +1,4 @@
 
-const nyhet = "Helgen er her! ikke waste den (ja jeg oppdaterer nettsiden hver dag)";
+const nyhet = "Håper KRLE prøven går bra for messen vår, håper det blir en bra liturgi i den amerikanske kirke";
 
 document.getElementById("nyheter").textContent=nyhet;
