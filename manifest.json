@@ -5,5 +5,10 @@
   "display": "standalone",
   "background_color": "#d1830e",
   "theme_color": "#d1830e",
-  "orientation": "portrait-primary"
+  "orientation": "portrait-primary",
+    "icons": [
+    {
+      "src": "images\favicon.ico"
+    }
+  ]
 }

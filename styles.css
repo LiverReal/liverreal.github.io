@@ -20,8 +20,9 @@
     font-style: normal;
 
     /*Remove scrollbars*/
-    overflow-x: hidden;
+    overflow-y: visible;
     scrollbar-width: none;
+    -ms-overflow-style: none; /* IE/Edge */
 
     margin: 0;
     padding: 0;
@@ -148,12 +149,15 @@ a {
 }
 
 .button-test {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    will-change: transform;
     margin: 0.5rem;
     padding: 1rem 1rem;
     text-shadow: 1.5px 1.5px 0px var(--thirdark), 0px 1.5px 0px var(--thirdark), -1.5px 1.5px 0px var(--thirdark);
     background-image: linear-gradient(var(--invis), var(--secondark));
     background-color: var(--secondary);
-    transition: background-color 200ms;
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
     text-align: center;
     border: 5px solid;
     border-image-slice: 1;
@@ -164,7 +168,13 @@ a {
 }
 
 .button-test:hover {
+    transform: scale(0.99) translateZ(0);
     background-color: var(--secondarl);
+}
+
+.button-test:active {
+    transform: scale(1.1) translateZ(0);
+    z-index: 5;
 }
 
 span {

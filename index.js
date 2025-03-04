@@ -1,4 +1,3 @@
-setTimeout(() => document.body.classList.add("loaded"), 50)
 
 window.transitionToPage = function(href) {
     document.body.style.opacity = 0;
@@ -9,6 +8,7 @@ window.transitionToPage = function(href) {
 };  
 
 document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("loaded");
     if (sessionStorage.getItem("fade") === "true") {
         document.body.style.opacity = 0;
         setTimeout(() => {
@@ -17,17 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 50);
     }
 });
-
-const nyhet = "Ny timeplan neste uke";
-
-document.getElementById("nyheter").textContent=nyhet;
-
-let greetings = ["Halla folkens", "Lev livet", "Borre's Nettside", "Nettsiden for ALLE", "Gratulerer du er super kul!"]
-let randList = Math.floor(Math.random() * greetings.length)
-
-document.getElementById("welcome-msg").textContent=greetings[randList];
-
-
 
 document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
@@ -38,3 +27,26 @@ document.addEventListener('gesturechange', function (e) {
 document.addEventListener('gestureend', function (e) {
     e.preventDefault();
 });
+
+function id_exists(id) {
+    let el = document.getElementById(id);
+
+    if (el != null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+const nyhet = "Ny timeplan neste uke";
+let greetings = ["Halla folkens", "Halla flokens", "Salam malekum", "Malekum salam", "Lev livet", "Borre's Nettside", "Sponset av 10A", "Sponset av Betonmast", "Nettsiden for ALLE", "Gratulerer du er super kul!"]
+
+if (id_exists("nyheter")) {
+    document.getElementById("nyheter").textContent=nyhet;
+}
+
+if (id_exists("welcome-msg")) {
+    let randList = Math.floor(Math.random() * greetings.length)
+    document.getElementById("welcome-msg").textContent=greetings[randList];
+}
