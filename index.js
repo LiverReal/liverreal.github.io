@@ -1,7 +1,7 @@
 setTimeout(() => document.body.classList.add("loaded"), 250)
 
 
-const nyhet = "Gratulerer Nemanja for å få 1. plass i quotes, valgt av meg fordi han er den eneste som sendte inn i den siste dagen";
+const nyhet = "Ny timeplan neste uke";
 
 document.getElementById("nyheter").textContent=nyhet;
 

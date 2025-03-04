@@ -133,7 +133,7 @@ a {
     text-decoration: none;
 }
 
-a.hyperlink {
+.hyperlink {
     font-size: 0.5rem;
     color: rgb(59, 133, 237);
     padding: 0;
