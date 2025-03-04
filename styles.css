@@ -42,6 +42,8 @@ html {
 
 body {
     color: var(--black);
+    opacity: 0;
+    transition: opacity .5s;
 }
 
 .white {
@@ -173,6 +175,10 @@ button {
     font-size: 1rem;
 }
 
+.nice-form-group {
+    
+}
+
 table {
     position: relative;
     left: 50%;
@@ -198,6 +204,10 @@ li {
 	background-repeat: no-repeat;
 	background-position: left center;
 	background-size: 1.5rem;
+}
+
+li.gold {
+    background-image: url(assets/images/branding/liverreal-icon.png);
 }
 
 #logo {
