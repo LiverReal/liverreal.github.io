@@ -42,8 +42,13 @@ html {
 
 body {
     color: var(--black);
+    background-color: var(--thirdary);
     opacity: 0;
     transition: opacity .5s;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 .white {
