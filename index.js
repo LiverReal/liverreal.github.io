@@ -1,5 +1,12 @@
-setTimeout(() => document.body.classList.add("loaded"), 250)
+setTimeout(() => document.body.classList.add("loaded"), 100)
 
+window.transitionToPage = function(href) {
+    document.body.style.opacity = 0;
+    sessionStorage.setItem("fade", "true");
+    setTimeout(() => { 
+        window.location.href = href;
+    }, 500);
+};
 
 const nyhet = "Ny timeplan neste uke";
 
@@ -10,26 +17,24 @@ let randList = Math.floor(Math.random() * greetings.length)
 
 document.getElementById("welcome-msg").textContent=greetings[randList];
 
-    // Function to transition out and navigate
-    window.transitionToPage = function(href) {
-        document.body.style.opacity = 0;
-        sessionStorage.setItem("fade", "true"); // Store fade state
-        setTimeout(() => { 
-            window.location.href = href;
-        }, 500);
-    };
+window.transitionToPage = function(href) {
+    document.body.style.opacity = 0;
+    sessionStorage.setItem("fade", "true");
+    setTimeout(() => { 
+        window.location.href = href;
+    }, 500);
+};
 
-    // Ensure fade-in happens correctly every time
     document.addEventListener("DOMContentLoaded", function() {
-        
         if (sessionStorage.getItem("fade") === "true") {
-            document.body.style.opacity = 0; // Start from 0
+            document.body.style.opacity = 0;
             setTimeout(() => {
-                document.body.style.opacity = 1; // Then fade in
-                sessionStorage.removeItem("fade"); // Remove flag
+                document.body.style.opacity = 1;
+                sessionStorage.removeItem("fade");
             }, 50);
-        } else {
-            document.body.classList.add("loaded");
         }
-        ;
     });
+
+
+
+    
