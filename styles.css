@@ -20,7 +20,7 @@
     font-style: normal;
 
     /*Remove scrollbars*/
-    overflow-y: visible;
+    overflow-x: none;
     scrollbar-width: none;
     -ms-overflow-style: none; /* IE/Edge */
 
