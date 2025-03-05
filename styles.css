@@ -47,7 +47,7 @@ body {
     color: var(--black);
     background-color: var(--thirdark);
     opacity: 0;
-    transition: opacity .4s;
+    transition: opacity .4s;    
 }
 
 body.loaded {
