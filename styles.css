@@ -239,6 +239,13 @@ li.gold {
     background-size: contain;
 }
 
+#visit-count {
+    z-index: 3;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
 img {
     -webkit-user-drag: none;
     user-select: none;

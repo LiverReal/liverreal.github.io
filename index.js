@@ -39,14 +39,38 @@ function id_exists(id) {
 }
 
 
-const nyhet = "Ny timeplan neste uke";
-let greetings = ["Halla folkens", "Halla flokens", "Salam malekum", "Malekum salam", "Lev livet", "Borre's Nettside", "Sponset av 10A", "Sponset av Betonmast", "Nettsiden for ALLE", "Gratulerer du er super kul!"]
+const nyhet = "Ny timeplan har begynt - Isbading på onsdag";
+let greetings = ["Halla folkens", "Halla flokens", "Salam malekum", "Malekum salam", "Lev livet", "Borre's Nettside", "Sponset av 10A", "Sponset av Betonmast", "Nettsiden for ALLE", "Gratulerer du er super kul!", "Til dovre faller!", "BlimE inn på wordchat og vær deg selv"]
 
 if (id_exists("nyheter")) {
     document.getElementById("nyheter").textContent=nyhet;
 }
 
 if (id_exists("welcome-msg")) {
-    let randList = Math.floor(Math.random() * greetings.length)
+    let lastGreeting = localStorage.getItem("lastGreeting");
+    console.log(lastGreeting);
+
+    let randList = Math.floor(Math.random() * greetings.length);
+    while (greetings[randList] == lastGreeting) {
+        randList = Math.floor(Math.random() * greetings.length);
+    }
+
     document.getElementById("welcome-msg").textContent=greetings[randList];
+    localStorage.setItem("lastGreeting", greetings[randList]);
+}
+
+let visitCount = Number(localStorage.getItem("visitCount"));
+
+if (!sessionStorage.getItem("visited")) {
+    console.log("First time visiting this page! This session anyways rite?");
+    sessionStorage.setItem("visited", "true");
+
+    console.log(visitCount);
+    visitCount++;
+    console.log(visitCount);
+    localStorage.setItem("visitCount", visitCount);
+}
+
+if (id_exists("visit-count")) {
+    document.getElementById("visit-count").textContent=visitCount;
 }
