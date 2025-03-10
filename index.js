@@ -59,7 +59,7 @@ if (id_exists("welcome-msg")) {
     localStorage.setItem("lastGreeting", greetings[randList]);
 }
 
-let visitCount = Number(localStorage.getItem("visitCount"));
+let visitCount = localStorage.getItem("visitCount") ?? 0;
 
 if (!sessionStorage.getItem("visited")) {
     console.log("First time visiting this page! This session anyways rite?");
