@@ -67,16 +67,15 @@
         Runner.run(runner, engine);
 
         // Function to spawn circles on click
-        document.addEventListener("click", function(event) {
-            document.body.addEventListener("mousedown", event => {
+        document.addEventListener("mousedown", function(event) {
                 if (event.button == 0) { // left click for mouse
                     spawnCircle(event);
-                
+                } else if (event.button == 1){   // right click for mouse
+                    spawnCircle(event);
                 } else if (event.button == 2){   // right click for mouse
                     spawnCircle(event);
-                }});
-
-        });
+                }
+            })
 function spawnCircle(event) {
     var circle = Bodies.circle(event.clientX, event.clientY, 20, {
         restitution: 0.8,
