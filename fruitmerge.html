@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click to Spawn Circles</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
     <style>
         body, html {
             margin: 0;
@@ -13,11 +17,13 @@
         canvas {
             position: absolute;
             display: block;
-            background: #ffd500;
+            background: #d5811b;
         }
     </style>
 </head>
 <body>
+    <span onclick="transitionToPage('index.html')" id="logo"></span>
+    
     <script>
         var Engine = Matter.Engine,
             Render = Matter.Render,
@@ -35,7 +41,7 @@
                 width: window.innerWidth,
                 height: window.innerHeight,
                 wireframes: false,
-                background: '#ffd500'
+                background: 'd5811b'
             }
         });
 
@@ -79,5 +85,9 @@
             World.add(world, walls);
         });
     </script>
+
+
+<script src="index.js"></script>
+
 </body>
 </html>
