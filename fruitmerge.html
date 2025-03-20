@@ -60,18 +60,18 @@
         function createWalls() {
             var width = window.innerWidth;
             var height = window.innerHeight;
-            var ratio = 3/4;
+            var ratio = 4/3;
 
-            var thickness = width; // Thickness of boundaries
-            var containthickness = width*0.1 // thickness of container
+            var thickness = height; // Thickness of boundaries
+            var containthickness = width - height  // thickness of container
             // Syntax : x - y - x thickness - y thickness
             var ground = Bodies.rectangle(width / 2, height + thickness / 2 - height*0.1, width, thickness, { isStatic: true,     render: { fillStyle: "#994400" } });
             var ceiling = Bodies.rectangle(width / 2, -thickness / 2, width, thickness, { isStatic: true });
             var leftWall = Bodies.rectangle(-thickness / 2, height / 2, thickness, height, { isStatic: true });
             var rightWall = Bodies.rectangle(width + thickness / 2, height / 2, thickness, height, { isStatic: true });
 
-            var leftContainer = Bodies.rectangle(0, height*0.4, thickness, thickness,  { isStatic: true,     render: { fillStyle: "#555555" } });
-            var rightContainer = Bodies.rectangle(width*0.3, height*0.4, thickness, thickness,  { isStatic: true,     render: { fillStyle: "#555555" } });
+            var leftContainer = Bodies.rectangle(0, height*0.5, containthickness, thickness,  { isStatic: true,     render: { fillStyle: "#555555" } });
+            var rightContainer = Bodies.rectangle(width, height*0.5, containthickness, thickness,  { isStatic: true,     render: { fillStyle: "#555555" } });
 
             return [ground, ceiling, leftWall, rightWall, leftContainer, rightContainer];
         }
@@ -118,8 +118,16 @@ var fruitData = {
 // Function to spawn a fruit
 function spawnCircle(event) {
     var fruitLevel = 1; // Start with fruit1
+
+    for (let i = 0; i < getHighestFruitLevel(); i++) {  // Runs 5 times (i = 0 to 4)
+        fruitLevel += Math.floor(Math.random() * 2);
+        console.log(fruitLevel);
+    }
+
     var data = fruitData[fruitLevel];
     var x = event.clientX;
+
+    console.log(getHighestFruitLevel());
 
     var circle = Bodies.circle(x, vh*0.1, data.radius, {
         restitution: 0.8,
@@ -181,6 +189,23 @@ Matter.Events.on(engine, "collisionStart", function(event) {
         }
     });
 });
+
+function getHighestFruitLevel() {
+    if (fruits.length === 0) {
+        return null; // No fruits on the map
+    }
+
+    let highestLevel = 0;
+
+    fruits.forEach(fruit => {
+        let level = parseInt(fruit.label.replace("fruit", ""), 10);
+        if (level > highestLevel) {
+            highestLevel = level;
+        }
+    });
+
+    return highestLevel;
+}
 
         // Resize canvas and walls when window resizes
         window.addEventListener("resize", function() {
