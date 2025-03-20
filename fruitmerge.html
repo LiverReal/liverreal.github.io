@@ -124,6 +124,10 @@ function spawnCircle(event) {
         console.log(fruitLevel);
     }
 
+    if (fruitLevel != 1) {
+        fruitLevel - 1;
+    }
+
     var data = fruitData[fruitLevel];
     var x = event.clientX;
 
