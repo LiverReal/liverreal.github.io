@@ -40,7 +40,7 @@ function id_exists(id) {
 
 
 const nyhet = "Kjeder du deg i timen? Jeg også";
-let greetings = ["Halla folkens", "Halla flokens", "Salam malekum", "Malekum salam", "Lev livet", "Borre's Nettside", "Sponset av 10A", "Sponset av Betonmast", "Nettsiden for ALLE", "Gratulerer du er super kul!", "Til dovre faller!", "BlimE inn på wordchat og vær deg selv", "Halla Even", "Kodet i JavaScript™"]
+let greetings = ["Halla folkens", "Halla flokens", "Salam malekum", "Malekum salam", "Lev livet", "Borre's Nettside", "Sponset av 10A", "Sponset av Betonmast", "Nettsiden for ALLE", "Gratulerer du er super kul!", "Til dovre faller!", "Oops, app app app app!", "Halla Even", "Kodet i JavaScript™"]
 
 if (id_exists("nyheter")) {
     document.getElementById("nyheter").textContent=nyhet;
