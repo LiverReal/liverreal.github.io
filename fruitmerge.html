@@ -23,18 +23,18 @@
 </head>
 <body>
     <span onclick="transitionToPage('index.html')" id="logo"></span>
-    
-    <script>
+
+<script>
         //program vars
         var vh = window.innerHeight;
         var vw = window.innerWidth;
         //modifiers
-
-
-
-
-
-
+        var rest = 1.05;
+        var frict = -0.5;
+        var dens = 1;
+        var grest = 1;
+        var gfrict = 1;
+        //script
 
         var Engine = Matter.Engine,
             Render = Matter.Render,
@@ -65,7 +65,7 @@
             var thickness = height; // Thickness of boundaries
             var containthickness = width - height  // thickness of container
             // Syntax : x - y - x thickness - y thickness
-            var ground = Bodies.rectangle(width / 2, height + thickness / 2 - height*0.1, width, thickness, { isStatic: true,     render: { fillStyle: "#994400" } });
+            var ground = Bodies.rectangle(width / 2, height + thickness / 2 - height*0.1, width, thickness, { isStatic: true, friction: frict, restitution: rest,     render: { fillStyle: "#994400" } });
             var ceiling = Bodies.rectangle(width / 2, -thickness / 2, width, thickness, { isStatic: true });
             var leftWall = Bodies.rectangle(-thickness / 2, height / 2, thickness, height, { isStatic: true });
             var rightWall = Bodies.rectangle(width + thickness / 2, height / 2, thickness, height, { isStatic: true });
@@ -93,10 +93,11 @@
                     spawnCircle(event);
                 }
             })
+
 // Keep track of all fruit bodies
 var fruits = [];
 var fruitLevels = 14; // Maximum merge level
-var responsiveSize = vw*0.001;
+var responsiveSize = (vw+vh)*0.0007;
 
 // Define fruit properties: radius and image for each level
 var fruitData = {
@@ -120,7 +121,7 @@ var fruitData = {
 function spawnCircle(event) {
     var fruitLevel = 1; // Start with fruit1
 
-    for (let i = 0; i < getHighestFruitLevel(); i++) {  // Runs 5 times (i = 0 to 4)
+    for (let i = 0; i < getHighestFruitLevel(); i+=2) {  // Runs 5 times (i = 0 to 4)
         fruitLevel += Math.floor(Math.random() * 2);
         console.log(fruitLevel);
     }
@@ -135,8 +136,9 @@ function spawnCircle(event) {
     console.log(getHighestFruitLevel());
 
     var circle = Bodies.circle(x, vh*0.1, data.radius, {
-        restitution: 0.8,
-        friction: 0.5,
+        restitution: rest,
+        friction: frict,
+        density: dens,
         label: "fruit" + fruitLevel, // Assign fruit level
         render: {
             sprite: {
@@ -177,8 +179,9 @@ Matter.Events.on(engine, "collisionStart", function(event) {
 
             // Create new merged fruit
             var newFruit = Bodies.circle(newX, newY, newData.radius, {
-                restitution: 0.8,
-                friction: 0.5,
+                restitution: rest,
+                friction: frict,
+                density: dens,
                 label: "fruit" + newLevel,
                 render: {
                     sprite: {
