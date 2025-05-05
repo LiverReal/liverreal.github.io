@@ -199,8 +199,8 @@ button {
 .cool {
     outline: 0;
     border: 0;
-    box-shadow: inset 4px 4px 5px rgb(255, 255, 255), inset -4px -4px 5px rgb(189, 189, 189);
-    border-radius: 3px;
+    box-shadow: inset -4px -4px 7px rgb(189, 189, 189), inset 4px 4px 7px rgb(255, 255, 255);
+    border-radius: 7px;
     padding: 5px;
 }
 
@@ -208,6 +208,10 @@ form {
     background-color: #a8a8a8;
     margin: 1rem;
     padding: 1rem;
+}
+
+form.cool {
+    box-shadow: none;
 }
 
 table {
