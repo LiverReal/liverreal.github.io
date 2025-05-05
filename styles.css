@@ -196,7 +196,7 @@ button {
     font-size: 1rem;
 }
 
-button.cool {
+.cool {
     outline: 0;
     border: 0;
     box-shadow: inset 4px 4px 5px rgb(255, 255, 255), inset -4px -4px 5px rgb(189, 189, 189);
