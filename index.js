@@ -5,6 +5,10 @@ window.transitionToPage = function(href) {
     setTimeout(() => { 
         window.location.href = href;
     }, 400);
+    setTimeout(() => { 
+        document.body.style.opacity = 1;
+        sessionStorage.setItem("fade", "false");
+    }, 800);
 };  
 
 document.addEventListener("DOMContentLoaded", function() {
