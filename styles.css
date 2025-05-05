@@ -196,6 +196,19 @@ button {
     font-size: 1rem;
 }
 
+button.cool {
+    outline: 0;
+    border: 0;
+    box-shadow: inset 4px 4px 5px rgb(255, 255, 255), inset -4px -4px 5px rgb(189, 189, 189);
+    border-radius: 3px;
+    padding: 5px;
+}
+
+form {
+    background-color: #a8a8a8;
+    margin: 1rem;
+    padding: 1rem;
+}
 
 table {
     position: relative;
